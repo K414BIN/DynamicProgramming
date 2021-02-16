@@ -10,13 +10,21 @@ namespace Lesson_7
         {
             Console.WriteLine("Добрый день! ");
             Console.WriteLine("Данная программа рассчитывает для прямоугольного поля размера M на N клеток количество путей из верхней левой клетки в правую нижнюю.");
+            // Только положительные числа
+            do {
             Console.Write("Введите размер поля М: ");
             int m= Convert.ToInt32(System.Console.ReadLine());
+            } while (m>0);
+            do {
             Console.Write("Введите размер поля N: ");
             int n = Convert.ToInt32(System.Console.ReadLine());
+            } while (n>0);
             // проверено тут https://www.wolframalpha.com
             Console.WriteLine("Количество путей вычисляется по формуле неупорядоченной выборки с повторениями из комбинаторики.");
             // проверяем по частям 
+            if (n==1 || m==1) {    Console.Write("Будет только один путь.");  }
+            else
+            {
             BigInteger result1 = FactTree((m - 1) + n);
             BigInteger result2 = FactTree(m);
             BigInteger result3 = FactTree(n-1);
@@ -24,6 +32,7 @@ namespace Lesson_7
             BigInteger total = result1 / (result2 * result3);
             Console.Write("Путей будет ");
             Console.Write(total);
+            }
             Console.WriteLine();
             System.Console.ReadLine();
 
