@@ -8,17 +8,19 @@ namespace Lesson_7
     {
         static void Main(string[] args)
         {
+            int m;
+            int n;
             Console.WriteLine("Добрый день! ");
             Console.WriteLine("Данная программа рассчитывает для прямоугольного поля размера M на N клеток количество путей из верхней левой клетки в правую нижнюю.");
             // Только положительные числа
             do {
             Console.Write("Введите размер поля М: ");
-            int m= Convert.ToInt32(System.Console.ReadLine());
-            } while (m>0);
+             m= Convert.ToInt32(System.Console.ReadLine());
+            } while (m<1);
             do {
             Console.Write("Введите размер поля N: ");
-            int n = Convert.ToInt32(System.Console.ReadLine());
-            } while (n>0);
+             n = Convert.ToInt32(System.Console.ReadLine());
+            } while (n<1);
             // проверено тут https://www.wolframalpha.com
             Console.WriteLine("Количество путей вычисляется по формуле неупорядоченной выборки с повторениями из комбинаторики.");
             // проверяем по частям 
